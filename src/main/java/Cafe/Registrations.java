@@ -30,7 +30,7 @@ public class Registrations extends HttpServlet {
         response.setContentType("text/html");
         String url="jdbc:mysql://localhost:3306/cafe";
         String user="root";
-        String pass="12345@Shark";
+        String pass=DB_PASSWORD;
         try {
             // Hash password
             String hashedPassword = hashPassword(password);
