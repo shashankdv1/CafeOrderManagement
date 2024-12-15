@@ -32,21 +32,34 @@ public class Login extends HttpServlet {
 		String email=request.getParameter("mail");
 	    String password=request.getParameter("password");
 	    try {
+	    	int var = 0;
 	    Class.forName("com.mysql.cj.jdbc.Driver");
 	    try(Connection con =DriverManager.getConnection(url,user,pass)) {
 	    	String sql="SELECT * FROM registeruser WHERE email=? AND password=?";
+	    	String sql2="SELECT username from registeruser WHERE email=? and password=?";
+	    	PreparedStatement ps2=con.prepareStatement(sql2);
 	    	try(PreparedStatement ps=con.prepareStatement(sql))
-			{
+			{  
+	    		ps.setInt(1, var);
 	    		String hashedPassword=hashPassword(password);
 			 ps.setString(1,email);
 			 ps.setString(2, hashedPassword);
 			  ResultSet rs = ps.executeQuery();
 			 if (rs.next()) {
-                 // Login successful
-//                 out.print("<h3>Login successful! Welcome, " + email + "</h3>");
-				 request.getRequestDispatcher("Home.jsp").forward(request, response);
-                 // Redirect to a welcome page if needed
-                 // response.sendRedirect("welcome.jsp");
+				 try(ps2)
+				 {
+					 ps2.setString(1,email);
+					 ps2.setString(2, hashedPassword);
+					 ResultSet rs2=ps2.executeQuery();
+					 if(rs2.next())
+					 {
+						 String username=rs2.getString("username");
+						 request.setAttribute("username",username); 
+					 }
+					
+				 }
+				
+				 request.getRequestDispatcher("/Render").forward(request, response);
              } else {
                  // Login failed
               out.print("<html><Script>alert('Invalid password or email!,Please try again! or ');</Script></html>");
