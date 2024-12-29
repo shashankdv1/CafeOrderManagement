@@ -35,7 +35,7 @@ public class Search extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		String url="jdbc:mysql://localhost:3306/cafe";
 		String user="root";
-		String pass="12345@Shark";
+		String pass=DB_PASSWORD;
 		String value=request.getParameter("searchname");
 		String encodedURL = URLEncoder.encode(value, "UTF-8");
 		try {
