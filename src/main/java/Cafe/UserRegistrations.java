@@ -14,7 +14,7 @@ import java.security.MessageDigest;
 import java.util.Base64;
 
 @WebServlet("/Registrations")
-public class Registrations extends HttpServlet {
+public class UserRegistrations extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     public Registrations() {
