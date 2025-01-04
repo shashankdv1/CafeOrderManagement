@@ -11,7 +11,7 @@
 <div class="Main">
 <h1>Register</h1>
 <div class="Container">
-<form name="Login-form" action="Registrations" method="post">
+<form name="Login-form" action="UserRegistrations" method="post">
 <label for="username">Name: </label><input id="username" type="text" name="username" placeholder="Please Enter your Name" required></input><br>
 <label for="mail">Email: </label><input id="mail" type="email" name="mail" placeholder="Please Enter your Email address" required></input><br>
 <label  for="Phone">Contact: </label><input id="number" name="Phone" type="text" placeholder="Please Enter your Phone number" required></input><br>
