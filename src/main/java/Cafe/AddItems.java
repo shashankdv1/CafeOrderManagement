@@ -41,9 +41,9 @@ public class AddItems extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        String url = "jdbc:mysql://localhost:3306/cafe";
+        String url = "DB_URL";
         String user = "root";
-        String pass = DB_PASSWORD;
+        String pass = "DB_PASSWORD";
 
         try {
             // Load MySQL JDBC Driver
