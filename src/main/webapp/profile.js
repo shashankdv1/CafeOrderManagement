@@ -36,6 +36,18 @@ document.addEventListener("DOMContentLoaded",function()
 	document.getElementById("submitPassword").addEventListener("click",function(event){
 		event.preventDefault();
 		let x = document.getElementById("newpassword").value;
+		let patt = new RegExp("^.*(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])[a-zA-Z0-9@#$%^&+=]*$");
+		if(patt.test(x))
+			{
+				
+			}
+		else{
+		alert("Password must contain one special Character,one numerical value and one Uppercase Character");	
+		}
+		if(x.length<8)
+			{
+				alert("Password must contain 8 Characters");
+			}
 		let y = document.getElementById("Retype").value;
 		if(x===y)
 			{
