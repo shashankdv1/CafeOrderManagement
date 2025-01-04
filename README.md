@@ -46,11 +46,11 @@ Before you begin, ensure you have the following installed:
 1. Go to **Window > Show View > Servers** to open the **Servers** view.
 2. In the **Servers** view, you should see **Tomcat v9.0 Server** (or your version) listed. If it's not listed, right-click in the **Servers** view, select **New > Server**, and follow the steps to add the Tomcat runtime.
 
-### 4.Replace
-1.Replace your connection url in place of DB_URL.
-2.Replace your username in place of root.
-3.Replace your database password in place of DB_PASSWORD.
----
+### 4. Replace the following placeholders in your code:
+1. Replace `DB_URL` with your actual database connection URL.
+2. Replace `root` with your actual database username.
+3. Replace `DB_PASSWORD` with your actual database password.
+
 
 ## Running the Project
 
