@@ -33,7 +33,7 @@ public class Search extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
-		String url="jdbc:mysql://localhost:3306/cafe";
+		String url="DB_URL";
 		String user="root";
 		String pass=DB_PASSWORD;
 		String value=request.getParameter("searchname");
