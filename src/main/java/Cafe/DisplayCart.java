@@ -24,7 +24,7 @@ public class DisplayCart extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			String url="jdbc:mysql://localhost:3306/cafe";
 			String user="root";
-			String pass="12345@Shark";
+			String pass="DB_PASSWORD";
 		PrintWriter out = response.getWriter();
 		try {
 		      Class.forName("com.mysql.cj.jdbc.Driver");
