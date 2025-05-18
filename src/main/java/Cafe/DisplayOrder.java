@@ -23,7 +23,7 @@ public class DisplayOrder extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = "jdbc:mysql://localhost:3306/cafe";
-        String user = "root";
+        String user = "DB_USERNAME";
         String pass = "DB_PASSWORD";
         PrintWriter out = response.getWriter();
 
