@@ -25,7 +25,7 @@ public class AdminLogin extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		 response.setContentType("text/html");
 	        String url="DB_URL";
-	        String user="root";
+	        String user="DB_USERNAME";
 	        String pass="DB_PASSWORD";
 		String email=request.getParameter("email");
 	    String password=request.getParameter("password");
