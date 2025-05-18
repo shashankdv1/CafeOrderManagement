@@ -26,17 +26,11 @@ public class AddtoCart extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-//        InputStream inputStream = null;
-//        Part filePart = request.getPart("itemImage");
-//
-//        if (filePart != null) {
-//            inputStream = filePart.getInputStream(); 
-//        }
 
 		 response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		 String url="DB_URL";
-		 String user="root";
+		 String user="DB_USERNAME";
 		 String pass="DB_PASSWORD";
 		 
 		 try {
@@ -52,12 +46,7 @@ public class AddtoCart extends HttpServlet {
 						{
 							ps.setString(1, mail);
 							ps.setString(2,id);
-							ps.setString(3,name);
-//							if (inputStream != null) {
-//			                    ps.setBlob(4, inputStream);
-//			                } else {
-//			                    ps.setNull(3, java.sql.Types.BLOB); // Handle missing image gracefully
-//			                }
+							ps.setString(3,name);			                
 							ps.setString(4,price);
 							int rowsInserted = ps.executeUpdate();
 							if (rowsInserted > 0) {
