@@ -16,9 +16,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class Search
- */
 @WebServlet("/Search")
 public class Search extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -26,7 +23,6 @@ public class Search extends HttpServlet {
    
     public Search() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	
@@ -34,7 +30,7 @@ public class Search extends HttpServlet {
 		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
 		String url="DB_URL";
-		String user="root";
+		String user="DB_USERNAME";
 		String pass=DB_PASSWORD;
 		String value=request.getParameter("searchname");
 		String encodedURL = URLEncoder.encode(value, "UTF-8");
