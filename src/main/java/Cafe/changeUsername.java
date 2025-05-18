@@ -18,9 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class changeUsername
- */
+
 @WebServlet("/changeUsername")
 public class changeUsername extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -33,7 +31,7 @@ public class changeUsername extends HttpServlet {
 		    String password = request.getParameter("Password");
 		    password=hashPassword(password);
 		    String url="DB_URL";
-	        String user="root";
+	        String user="DB_USERNAME";
 	        String pass="DB_PASSWORD";
 			PrintWriter out= response.getWriter();
 	        try {
