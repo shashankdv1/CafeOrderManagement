@@ -19,15 +19,13 @@ public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public Login() {
         super();
-        // TODO Auto-generated constructor stub
     }
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
 		 response.setContentType("text/html");
 	        String url="jdbc:mysql://localhost:3306/cafe";
-	        String user="root";
+	        String user="DB_USERNAME";
 	        String pass=DB_PASSWORD;
 		String email=request.getParameter("mail");
 	    String password=request.getParameter("password");
@@ -61,7 +59,6 @@ public class Login extends HttpServlet {
 				
 				 request.getRequestDispatcher("/Render").forward(request, response);
              } else {
-                 // Login failed
               out.print("<html><Script>alert('Invalid password or email!,Please try again! or ');</Script></html>");
               out.print("<html><a href='Register.jsp'>New User?</a></html>");
              }
