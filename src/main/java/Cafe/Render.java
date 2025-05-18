@@ -25,24 +25,19 @@ public class Render extends HttpServlet {
         super();
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Declare the PrintWriter object to write output to the response
         PrintWriter out = response.getWriter();
-        /*response.setContentType("text/html");*/
 
         String url = "DB_URL";
         String user = "root";
         String pass = "DB_PASSWORD";
 
         try {
-            // Load the JDBC driver
             Class.forName("com.mysql.cj.jdbc.Driver");
-            HttpSession session = request.getSession(false); // Don't create a new session if it doesn't exist
+            HttpSession session = request.getSession(false); 
             if (session == null || session.getAttribute("username") == null) {
-                // If not logged in, redirect to login page
-                response.sendRedirect("Login.jsp");
+            response.sendRedirect("Login.jsp");
                 return;
             }
-            // Connect to the database
             try (Connection con = DriverManager.getConnection(url, user, pass)) {
                 String sql = "SELECT Item_Id,Item_Name, Item_Description, Item_Image, Item_Price FROM items";
                 try (con) {
@@ -68,7 +63,6 @@ public class Render extends HttpServlet {
             e.printStackTrace();
             out.print("<h3>Error occurred: " + e.getMessage() + "</h3>");
         } finally {
-            // Make sure to close the PrintWriter
             out.close();
         }
     }
