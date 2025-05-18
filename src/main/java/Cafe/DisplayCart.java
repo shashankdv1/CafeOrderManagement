@@ -18,12 +18,11 @@ public class DisplayCart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public DisplayCart() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			String url="jdbc:mysql://localhost:3306/cafe";
-			String user="root";
+			String user="DB_USERNAME";
 			String pass="DB_PASSWORD";
 		PrintWriter out = response.getWriter();
 		try {
