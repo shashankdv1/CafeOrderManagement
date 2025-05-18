@@ -35,40 +35,37 @@ public class AddItems extends HttpServlet {
         Part filePart = request.getPart("upload_image");
 
         if (filePart != null) {
-            inputStream = filePart.getInputStream(); // Get input stream of the uploaded file
+            inputStream = filePart.getInputStream(); 
         }
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
         String url = "DB_URL";
-        String user = "root";
+        String user = "DB_USERNAME";
         String pass = "DB_PASSWORD";
 
         try {
-            // Load MySQL JDBC Driver
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            // Establish database connection
+    
             try (Connection con = DriverManager.getConnection(url, user, pass)) {
-                // Prepare SQL query
                 String sql = "INSERT INTO items (Item_Name, Item_Type, Item_Image, Item_Description, Item_Price) VALUES (?, ?, ?, ?, ?)";
                 PreparedStatement ps = con.prepareStatement(sql);
 
-                // Set query parameters
                 ps.setString(1, itemName);
                 ps.setString(2, itemType);
 
                 if (inputStream != null) {
                     ps.setBlob(3, inputStream);
                 } else {
-                    ps.setNull(3, java.sql.Types.BLOB); // Handle missing image gracefully
+                    ps.setNull(3, java.sql.Types.BLOB); 
                 }
 
                 ps.setString(4, itemDescription);
                 ps.setString(5, itemPrice);
                 	
-                // Execute the query
+                
                 int rowsInserted = ps.executeUpdate();
 
                 if (rowsInserted > 0) {
