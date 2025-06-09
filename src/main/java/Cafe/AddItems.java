@@ -40,11 +40,6 @@ public class AddItems extends HttpServlet {
         if (filePart != null) {
             inputStream = filePart.getInputStream();
         }
-
-        String url = "jdbc:mysql://localhost:3306/cafe";
-        String user = "root";
-        String pass = "12345@Shark";
-
         try (PrintWriter out = response.getWriter()) {
             // Set response content type
             response.setContentType("text/html");

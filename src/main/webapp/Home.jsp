@@ -22,10 +22,10 @@
         <a id="searchlink" href="http://localhost:8080/CafeOrderManageme/Search?searchname=Pasteries">Pastries</a>
     </div>
     <input type="text" name="searchname"  id="search-block" placeholder="Please enter search">
-    <button id="search" type="submit">
-        <img id="search-img" src="magnifying-glass-solid.svg">
-        <a id="searchlink" href="http://localhost:8080/CafeOrderManageme/Search?searchname=" style="display:none;"></a>
-    </button>
+    
+        
+        <a id="searchlink" href="http://localhost:8080/CafeOrderManagement/Search?searchname=" style="display:none"><button id="search" type="submit"><img id="search-img" src="magnifying-glass-solid.svg"></button></a>
+  
     <button id="profile">
         <img id="user_image" src="user-regular.svg">
     </button>
@@ -52,6 +52,7 @@
     <% 
     Object obj = request.getAttribute("Itemdata");
     if (obj instanceof ArrayList<?>) {
+    	@SuppressWarnings("unchecked")
         ArrayList<items> Itemdata = (ArrayList<items>) obj;
         if (Itemdata.isEmpty()) {
             out.print("<h3>No items available at the moment</h3>");

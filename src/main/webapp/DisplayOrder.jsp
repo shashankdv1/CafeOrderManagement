@@ -18,6 +18,7 @@
             Object obj = request.getAttribute("Order_data");
 
             if (obj instanceof ArrayList<?>) {
+            	@SuppressWarnings("unchecked")
                 ArrayList<Orderdata> orderData = (ArrayList<Orderdata>) obj;
 
                 // Check if the orders list is empty

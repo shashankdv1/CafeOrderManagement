@@ -16,6 +16,7 @@
             Object obj = request.getAttribute("Cart_data");
 
             if (obj instanceof ArrayList<?>) {
+            	@SuppressWarnings("unchecked")
                 ArrayList<AddItemsToCart> cartData = (ArrayList<AddItemsToCart>) obj;
 
                 // Check if the cart is empty

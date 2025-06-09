@@ -2,10 +2,9 @@ package Cafe;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.net.URLEncoder;
+//import java.net.URLEncoder;
 import java.sql.Blob;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -15,10 +14,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-/**
- * Servlet implementation class Search
- */
 @WebServlet("/Search")
 public class Search extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -37,7 +32,7 @@ public class Search extends HttpServlet {
 	        Connection con= conObj.createConnection();
 	
 		String value=request.getParameter("searchname");
-		String encodedURL = URLEncoder.encode(value, "UTF-8");
+		//String encodedURL = URLEncoder.encode(value, "UTF-8");
 		try {
 			
 			if(con!=null) {
