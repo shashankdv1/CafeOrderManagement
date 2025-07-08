@@ -1,9 +1,0 @@
-CREATE TABLE `Admin` (
-  `AdminId` INT NOT NULL AUTO_INCREMENT,
-  `Email` VARCHAR(50) NOT NULL,
-  `Password` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`AdminId`)
-);
-
-
-
