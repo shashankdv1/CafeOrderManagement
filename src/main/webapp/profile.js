@@ -1,6 +1,10 @@
 
 let clickcount1=0;
+<<<<<<< HEAD
 
+=======
+let clickcount2=0;
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
 document.addEventListener("DOMContentLoaded",function()
 {
 	
@@ -17,6 +21,7 @@ document.addEventListener("DOMContentLoaded",function()
 	});
 });
 
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.getElementById('changeUsername');
     const formSection = document.getElementsByClassName("formsection2")[0];
@@ -30,6 +35,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+=======
+document.addEventListener("DOMContentLoaded",function()
+{
+	document.getElementById('change-username').addEventListener("click",function(){
+		if(clickcount2%2!=0)
+			{
+		document.getElementsByClassName("form-section2")[0].style.display='block';
+		clickcount2+=1;
+		}
+		else{
+			document.getElementsByClassName("form-section2")[0].style.display='none';
+			clickcount2+=1;
+		}
+	});
+});
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
 document.addEventListener("DOMContentLoaded",function()
 {
 	document.getElementById("submitPassword").addEventListener("click",function(event){

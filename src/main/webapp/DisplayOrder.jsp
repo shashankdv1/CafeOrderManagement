@@ -27,11 +27,21 @@
                     <p>Your orders list is empty.</p>
         <% 
                 } else {
+<<<<<<< HEAD
                    
                     for (Orderdata order : orderData) {
         %>
                         <div class="order-item">
                             <p><strong>Ordered Item Name:</strong> <%= order.getItemName() %></p>
+=======
+                    // Loop through each order and display it
+                    for (Orderdata order : orderData) {
+        %>
+                        <div class="order-item">
+                            <p><strong>Order Number:</strong> <%= order.getItemId() %></p>
+                            <p><strong>Order Name:</strong> <%= order.getOrderName() %></p>
+                            <p><strong>Orderer Name:</strong> <%= order.getUsername() %></p>
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
                             <p><strong>Order Price:</strong>  &#8377; <%= order.getOrderPrice()%></p>
                         </div>
         <% 

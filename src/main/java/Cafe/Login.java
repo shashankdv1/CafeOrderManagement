@@ -8,7 +8,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Base64;
+<<<<<<< HEAD
 import Cafe.AddItemsToCart;
+=======
+
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -70,6 +74,7 @@ public class Login extends HttpServlet {
                             if (rs2.next()) {
                                 String username = rs2.getString("username");
 
+<<<<<<< HEAD
                                 
                                 //request.setAttribute("username", username);
                                 //request.setAttribute("email", email);
@@ -79,6 +84,15 @@ public class Login extends HttpServlet {
                                 // Forward the request to the Render page or another post-login page
                                 AddItemsToCart item=new AddItemsToCart();
                                 item.setEmail(email);
+=======
+                                // Set the username in the request attribute for display
+                                request.setAttribute("username", username);
+
+                                session.setAttribute("username", username);
+                                session.setAttribute("email", email);
+
+                                // Forward the request to the Render page or another post-login page
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
                                 request.getRequestDispatcher("/Render").forward(request, response);
                             } else {
                                 out.print("<html><Script>alert('Error retrieving username.');</Script></html>");
@@ -86,7 +100,11 @@ public class Login extends HttpServlet {
                         }
 
                     } else {
+<<<<<<< HEAD
                        
+=======
+                        // If login fails, show error message
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
                         out.print("<html><Script>alert('Invalid email or password. Please try again.');</Script></html>");
                         out.print("<html><a href='Register.jsp'>New User? Register here.</a></html>");
                     }
@@ -100,6 +118,7 @@ public class Login extends HttpServlet {
         }
      
     }
+<<<<<<< HEAD
     
     private String hashPassword(String password) throws UnsupportedEncodingException {
 		// TODO Auto-generated method stub
@@ -124,4 +143,19 @@ public class Login extends HttpServlet {
             throw new RuntimeException(e);
         }
  }
+=======
+
+    private String hashPassword(String password) throws UnsupportedEncodingException {
+		// TODO Auto-generated method stub
+	    MessageDigest md = null;
+		try {
+			md = MessageDigest.getInstance("SHA-256");
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        byte[] hash = md.digest(password.getBytes("UTF-8"));
+        return Base64.getEncoder().encodeToString(hash);
+	}
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
 }

@@ -22,13 +22,20 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/changeUsername")
 public class changeUsername extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+<<<<<<< HEAD
 	
+=======
+       
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
     public changeUsername() {
         super();
     }
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+<<<<<<< HEAD
 		
 			String email=request.getParameter("email");
+=======
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
 			String username = request.getParameter("name");
 		    String password = request.getParameter("Password");
 		    password=hashPassword(password);
@@ -40,11 +47,16 @@ public class changeUsername extends HttpServlet {
 	        	  Connect conObj = new Connect();
 	  	        Connection con= conObj.createConnection();
 	        	 if(con!=null) {
+<<<<<<< HEAD
 	        		String sql = "UPDATE registeruser SET username=? WHERE password=? and email=?";
+=======
+	        		String sql = "UPDATE registeruser SET username=? WHERE password=?";
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
 	        		try(PreparedStatement ps = con.prepareStatement(sql))
 	        		{
 	        			ps.setString(1, username);
 	        			ps.setString(2, password);
+<<<<<<< HEAD
 	        			ps.setString(3, email);        			 
 	        			int rowsUpdated = ps.executeUpdate();
 	        			 if(rowsUpdated>0)
@@ -55,6 +67,18 @@ public class changeUsername extends HttpServlet {
 	        			 else {
                              
                              out.print("<html>Update was unsuccessfull</html>");
+=======
+	        			 int rowsUpdated = ps.executeUpdate();
+	        			 if(rowsUpdated>0)
+	        			 {
+
+                             
+							session.setAttribute("message", "Username update was successfully!");
+	        			 }
+	        			 else {
+                             
+                             session.setAttribute("message", "Username update failed.");
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
                          }
 	        		}
 	        	 }
@@ -67,6 +91,7 @@ public class changeUsername extends HttpServlet {
 	        finally {
 	            out.close();
 	        }
+<<<<<<< HEAD
 	}
 	private String hashPassword(String password) throws UnsupportedEncodingException {
 		// TODO Auto-generated method stub
@@ -91,4 +116,20 @@ public class changeUsername extends HttpServlet {
             throw new RuntimeException(e);
         }
  }
+=======
+		doGet(request, response);
+	}
+	private String hashPassword(String password) throws UnsupportedEncodingException {
+		
+	    MessageDigest md = null;
+		try {
+			md = MessageDigest.getInstance("SHA-256");
+		} catch (NoSuchAlgorithmException e) {
+			
+			e.printStackTrace();
+		}
+        byte[] hash = md.digest(password.getBytes("UTF-8"));
+        return Base64.getEncoder().encodeToString(hash);
+	}
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
 }

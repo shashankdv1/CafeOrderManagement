@@ -2,6 +2,10 @@ package Cafe;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+<<<<<<< HEAD
+=======
+//import java.net.URLEncoder;
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
 import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

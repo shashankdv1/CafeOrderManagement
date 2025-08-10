@@ -60,6 +60,7 @@ document.getElementById('search').addEventListener('click',function()
 function calculatePrice(itemId,price)
 {	price=parseInt(price);
 	const qtyfield=document.getElementById("qty_"+itemId);
+<<<<<<< HEAD
 	if(!qtyfield)
 		{
 			alert("Please Enter valid quantity");
@@ -70,4 +71,10 @@ function calculatePrice(itemId,price)
 	const totalprice=quantity*price;
 	totalpricefield.value= totalprice;
 	return true;
+=======
+	const totalpricefield=document.getElementById("totalprice_"+itemId);
+	const quantity = parseInt(qtyfield.value, 10) || 0;
+	const totalprice=quantity*price;
+	totalpricefield.value= totalprice;
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
 }

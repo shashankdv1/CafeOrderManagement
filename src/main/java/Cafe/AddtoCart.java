@@ -47,6 +47,14 @@ public class AddtoCart extends HttpServlet {
 							ps.setString(1, mail);
 							ps.setString(2,id);
 							ps.setString(3,name);
+<<<<<<< HEAD
+=======
+//							if (inputStream != null) {
+//			                    ps.setBlob(4, inputStream);
+//			                } else {
+//			                    ps.setNull(3, java.sql.Types.BLOB); // Handle missing image gracefully
+//			                }
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
 							ps.setString(4,price);
 							int rowsInserted = ps.executeUpdate();
 							if (rowsInserted > 0) {

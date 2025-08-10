@@ -10,7 +10,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+<<<<<<< HEAD
 import javax.servlet.http.HttpSession;
+=======
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
 
 @WebServlet("/Order")
 public class Order extends HttpServlet {
@@ -23,6 +26,7 @@ public class Order extends HttpServlet {
 		 response.setContentType("text/html");
 		 Connect conObj = new Connect();
 	        Connection con= conObj.createConnection();
+<<<<<<< HEAD
 	        HttpSession session = request.getSession(false); // don't create a new one if none exists
 	        String email = null;
 
@@ -36,15 +40,27 @@ public class Order extends HttpServlet {
 	        }
 
 	          String itemname=request.getParameter("item_name");
+=======
+	          String itemname=request.getParameter("item_name");
+	          String username=request.getParameter("name"); 
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
 	          String totalprice=request.getParameter("Totalprice");
 	        try {
 	        	 
 	        	if(con!=null){
+<<<<<<< HEAD
 	        	{ String sql="INSERT INTO orders(email,itemname,totalprice) VALUES(?,?,?)";
 	        		try(PreparedStatement ps = con.prepareStatement(sql))
 	        		{
 	        			ps.setString(1,email);
 	        			ps.setString(2, itemname);
+=======
+	        	{ String sql="INSERT INTO orders(item,username,order_price) VALUES(?,?,?)";
+	        		try(PreparedStatement ps = con.prepareStatement(sql))
+	        		{
+	        			ps.setString(1, itemname);
+	        			ps.setString(2, username);
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
 	        			ps.setString(3, totalprice);
 	        			int rowsInserted = ps.executeUpdate();
 						if (rowsInserted > 0) {

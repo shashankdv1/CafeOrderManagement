@@ -26,7 +26,11 @@ public class Render extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Declare the PrintWriter object to write output to the response
         PrintWriter out = response.getWriter();
+<<<<<<< HEAD
         response.setContentType("text/html");
+=======
+        /*response.setContentType("text/html");*/
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
 
         Connect conObj = new Connect();
         Connection con= conObj.createConnection();
@@ -54,6 +58,10 @@ public class Render extends HttpServlet {
                         Blob itemImage = rs.getBlob("Item_Image");
                         String itemPrice = rs.getString("Item_Price");
                         data.add(new items(itemId,itemName, itemDescription, itemImage, itemPrice));
+<<<<<<< HEAD
+=======
+                      
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
                     }
                     request.setAttribute("Itemdata", data);
                     request.getRequestDispatcher("/Home.jsp").forward(request, response);

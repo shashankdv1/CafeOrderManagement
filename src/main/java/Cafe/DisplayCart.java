@@ -11,7 +11,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+<<<<<<< HEAD
 import javax.servlet.http.HttpSession;
+=======
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
 @WebServlet("/DisplayCart")
 public class DisplayCart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -25,6 +28,7 @@ public class DisplayCart extends HttpServlet {
 	        Connection con= conObj.createConnection();
 		PrintWriter out = response.getWriter();
 		try {
+<<<<<<< HEAD
 			HttpSession session = request.getSession(false); 
 	        String emailcheck = null;
 
@@ -42,6 +46,13 @@ public class DisplayCart extends HttpServlet {
 		    		  String sql="Select Item_id,Item_name,Item_Price from Cart where email=?";
 		    		  PreparedStatement ps = con.prepareStatement(sql);
 		    		  ps.setString(1, emailcheck);
+=======
+		     
+		     if(con!=null)
+		      {
+		    		  String sql="Select Item_id,Item_name,Item_Price from Cart";
+		    		  PreparedStatement ps = con.prepareStatement(sql);
+>>>>>>> 5802e278c7dd8859a3975d4d65621f37f6aa7f0b
 		    		  ResultSet rs = ps.executeQuery();
 		    		  ArrayList<AddItemsToCart> Cartdata = new ArrayList<>();
 		    		  
