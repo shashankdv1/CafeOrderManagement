@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class Connect {
     private static final String URL = "jdbc:mysql://127.0.0.1:3306/cafe";
     private static final String USER = "root";
-    private static final String PASS = "12345@Shark";
+    private static final String PASS = "";
 
     public  Connection createConnection() {
         Connection conn = null;
