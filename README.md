@@ -1,4 +1,4 @@
-# Cafe Order Management Project Built using Core Java,JSP and Servlets.
+# Cafe Order Management Project Built using Core Java,JSP and Servlet.
 
 # I made this project for self practice.This Project is about an online interface for management of Orders in a cafe. I have used Core Java,JDBC,Servlets and JSP for frontend in this Project.
 
